@@ -9,6 +9,8 @@ from qiskit.transpiler import generate_preset_pass_manager
 from qiskit_ibm_runtime import QiskitRuntimeService, EstimatorV2 as Estimator
 import matplotlib.pyplot as plt
 
+# SEE FIGURE 1 FOR JOB DESCRIPTION AND EXAMPLE OF VENV CMD
+
 # ---------------------------
 # 1. Create the Bell-state circuit
 # ---------------------------
@@ -40,7 +42,7 @@ print(f"Selected backend: {backend}")
 pm = generate_preset_pass_manager(backend=backend, optimization_level=1)
 isa_circuit = pm.run(qc)
 
-# Draw hardware-level circuit
+# Draw hardware-level circuit - SEE FIGURE 2
 fig = isa_circuit.draw("mpl", idle_wires=False)
 plt.show()
 
@@ -89,4 +91,6 @@ plt.xlabel("Observables")
 plt.ylabel("Expectation values")
 plt.title("Bell-state Observable Results")
 plt.grid(True)
+
 plt.show()
+# SEE FIGURE 3 AS OUTPUT
